@@ -10,34 +10,38 @@ public class PlayerCarController : Car
 
     protected override void CarUpdate() 
     {
-        GetInput();
+ 
     }
 
-    void GetInput()
-    {
-        #if UNITY_IPHONE || UNITY_ANDROID
-            // Read the steering from accelerometers
-            throttle = 1.0f;
-            steer = Mathf.Clamp(-Input.acceleration.y, -1, 1);
-        #else
-            throttle = Input.GetAxis("Vertical");
-            steer = Input.GetAxis("Horizontal");
-        #endif
 
-        //if(throttle < 0.0f)
-        //    brakeLights.SetFloat("_Intensity", Mathf.Abs(throttle));
-        //else
-        //    brakeLights.SetFloat("_Intensity", 0.0f);
+	void OnEnable(){
+		EasyJoystick.On_JoystickMove += On_JoystickMove;	
+		EasyJoystick.On_JoystickMoveEnd += On_JoystickMoveEnd;
+	}
+	
+	
+	void OnDisable(){
+		EasyJoystick.On_JoystickMove -= On_JoystickMove;	
+		EasyJoystick.On_JoystickMoveEnd -= On_JoystickMoveEnd;
+	}
+	
+	void OnDestroy(){
+		EasyJoystick.On_JoystickMove -= On_JoystickMove;	
+		EasyJoystick.On_JoystickMoveEnd -= On_JoystickMoveEnd;
+	}
 
-        //Make a handbrake when pressing "Space"
-        if (Input.GetKey("space"))
-        {
-            DoHandbrake();
-        }
-        else if (handbrake)
-        {
-            handbrake = false;
-            StartCoroutine(StopHandbraking(Mathf.Min(5, Time.time - handbrakeTime)));
-        }
-    }
+	void On_JoystickMove( MovingJoystick move){
+		if ("Move_Turn_Joystick" == move.joystickName) {
+			throttle = move.joystickAxis.y; 
+			steer = move.joystickAxis.x;
+		}
+	}
+	
+	void On_JoystickMoveEnd (MovingJoystick move)
+	{
+		if ("Move_Turn_Joystick" == move.joystickName) {
+			throttle = 0.0f;
+			steer = 0.0f;
+		}
+	}
 }

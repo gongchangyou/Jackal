@@ -1,19 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Cars\PlayerCar\PlayerCarController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapon\PlayerWeaponController.cs">
     <Files>
       <File FileName="Assets\Scripts\Cars\AICar\FSMs\ChaseState.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Cars\PlayerCar\Car.cs" Line="258" Column="19" />
       <File FileName="Assets\Scripts\Cars\PlayerCar\PlayerCarController.cs" Line="27" Column="30" />
       <File FileName="Assets\Scripts\Camera\SmoothFollow.cs" Line="18" Column="29" />
       <File FileName="Assets\Scripts\Cars\AICar\AICarController.cs" Line="30" Column="27" />
-      <File FileName="Assets\EasyTouch\Example\C# Example\Example for EasyButton\Bullet.cs" Line="8" Column="32" />
+      <File FileName="Assets\EasyTouch\Example\C# Example\Example for EasyButton\Bullet.cs" Line="6" Column="26" />
       <File FileName="Assets\EasyTouch\Example\C# Example\Example for EasyButton\ETPlayer.cs" Line="49" Column="12" />
-      <File FileName="Assets\Scripts\Weapon\PlayerWeaponController.cs" Line="65" Column="12" />
+      <File FileName="Assets\Scripts\Weapon\PlayerWeaponController.cs" Line="23" Column="42" />
       <File FileName="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example-thirdPerson_DirectEventMode\JoystickEvent.cs" Line="10" Column="16" />
       <File FileName="Assets\EasyTouch\Plugins\MovingJoystick.cs" Line="33" Column="3" />
       <File FileName="Assets\Scripts\Weapon\WeaponGun.cs" Line="38" Column="14" />
       <File FileName="Assets\EasyTouch\Plugins\EasyJoystick.cs" Line="82" Column="1" />
+      <File FileName="Assets\Scripts\Weapon\CarBullet.cs" Line="18" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,30 +24,13 @@
               <Node name="Example" expanded="True">
                 <Node name="C# Example" expanded="True">
                   <Node name="Example for EasyButton" expanded="True" />
-                  <Node name="Examples for EasyJoystick" expanded="True">
-                    <Node name="Example_FirstPerson_DirectMode" expanded="True" />
-                    <Node name="Example-thirdPerson_DirectEventMode" expanded="True" />
-                  </Node>
-                  <Node name="Examples for EasyTouch" expanded="True">
-                    <Node name="Example-MultiLayer" expanded="True" />
-                    <Node name="Example-Multiplefingers" expanded="True" />
-                  </Node>
                 </Node>
               </Node>
-              <Node name="Plugins" expanded="True" />
             </Node>
             <Node name="Scripts" expanded="True">
-              <Node name="Camera" expanded="True" />
-              <Node name="Cars" expanded="True">
-                <Node name="AICar" expanded="True">
-                  <Node name="FSMs" expanded="True" />
-                </Node>
-                <Node name="PlayerCar" expanded="True">
-                  <Node name="PlayerCarController.cs" selected="True" />
-                </Node>
+              <Node name="Weapon" expanded="True">
+                <Node name="PlayerWeaponController.cs" selected="True" />
               </Node>
-              <Node name="Flocking Unity" expanded="True" />
-              <Node name="Weapon" expanded="True" />
             </Node>
           </Node>
         </State>
