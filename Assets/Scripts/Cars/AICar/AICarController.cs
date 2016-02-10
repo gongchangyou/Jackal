@@ -101,7 +101,7 @@ public class AICarController : AdvancedFSM
         {
             bDead = true;
             Explode();
-            Destroy(gameObject, 4.0f);
+            Destroy(gameObject, 2.0f);
         }
     }
 }

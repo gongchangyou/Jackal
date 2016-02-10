@@ -44,8 +44,8 @@ public class PlayerWeaponController : MonoBehaviour
 
 		if ("Rotate_straff_Joystick" == move.joystickName) {
 						float angle = move.Axis2Angle (true);
-						Debug.Log ("move.joystickAxis.sqrMagnitude=" + move.joystickAxis.sqrMagnitude);
-						Turret.transform.localRotation = Quaternion.Euler (new Vector3 (-move.joystickAxis.sqrMagnitude * 5.0f, angle, 0));
+//						Debug.Log ("move.joystickAxis.sqrMagnitude=" + move.joystickAxis.sqrMagnitude);
+						Turret.transform.localRotation = Quaternion.Euler (new Vector3 (0, angle, 0));
 
 						if (!isShooting) {
 								isShooting = true;
