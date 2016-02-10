@@ -130,6 +130,7 @@
      <Compile Include="Assets\Scripts\Weapon\WeaponGun.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponMissile.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\SoldierGroup.cs" />
      <None Include="Assets\Shaders\LightsEmmissive.shader" />
      <None Include="Assets\Shaders\ShadowProjection.shader" />
      <None Include="Assets\EasyTouch\Readme_first.txt" />
