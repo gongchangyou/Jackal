@@ -1,20 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapon\PlayerWeaponController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Cars\PlayerCar\SoundController.cs">
     <Files>
       <File FileName="Assets\Scripts\Cars\AICar\FSMs\ChaseState.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Cars\PlayerCar\Car.cs" Line="258" Column="19" />
-      <File FileName="Assets\Scripts\Cars\PlayerCar\PlayerCarController.cs" Line="27" Column="30" />
-      <File FileName="Assets\Scripts\Camera\SmoothFollow.cs" Line="18" Column="29" />
-      <File FileName="Assets\Scripts\Cars\AICar\AICarController.cs" Line="30" Column="27" />
-      <File FileName="Assets\EasyTouch\Example\C# Example\Example for EasyButton\Bullet.cs" Line="6" Column="26" />
-      <File FileName="Assets\EasyTouch\Example\C# Example\Example for EasyButton\ETPlayer.cs" Line="49" Column="12" />
-      <File FileName="Assets\Scripts\Weapon\PlayerWeaponController.cs" Line="23" Column="42" />
+      <File FileName="Assets\Scripts\Cars\PlayerCar\Car.cs" Line="4" Column="1" />
+      <File FileName="Assets\Scripts\Cars\PlayerCar\PlayerCarController.cs" Line="21" Column="2" />
+      <File FileName="Assets\Scripts\Weapon\PlayerWeaponController.cs" Line="54" Column="6" />
       <File FileName="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example-thirdPerson_DirectEventMode\JoystickEvent.cs" Line="10" Column="16" />
-      <File FileName="Assets\EasyTouch\Plugins\MovingJoystick.cs" Line="33" Column="3" />
-      <File FileName="Assets\Scripts\Weapon\WeaponGun.cs" Line="38" Column="14" />
+      <File FileName="Assets\EasyTouch\Plugins\MovingJoystick.cs" Line="7" Column="1" />
+      <File FileName="Assets\Scripts\Weapon\WeaponGun.cs" Line="4" Column="1" />
       <File FileName="Assets\EasyTouch\Plugins\EasyJoystick.cs" Line="82" Column="1" />
       <File FileName="Assets\Scripts\Weapon\CarBullet.cs" Line="18" Column="3" />
+      <File FileName="Assets\EasyTouch\Example\C# Example\Example for EasyButton\ETPlayer.cs" Line="50" Column="3" />
+      <File FileName="Assets\Scripts\Cars\PlayerCar\SoundController.cs" Line="240" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,20 +24,24 @@
                   <Node name="Example for EasyButton" expanded="True" />
                 </Node>
               </Node>
+              <Node name="Plugins" expanded="True" />
             </Node>
             <Node name="Scripts" expanded="True">
-              <Node name="Weapon" expanded="True">
-                <Node name="PlayerWeaponController.cs" selected="True" />
+              <Node name="Cars" expanded="True">
+                <Node name="PlayerCar" expanded="True">
+                  <Node name="SoundController.cs" selected="True" />
+                </Node>
               </Node>
+              <Node name="Weapon" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>Bullet</Value>
-          <Value>throttleForce</Value>
-          <Value>brakeForce</Value>
+          <Value>DVolume</Value>
+          <Value>fVolume</Value>
+          <Value>eVolume</Value>
           <Value>engineForceValues[0]</Value>
           <Value>throttle</Value>
           <Value>m_Unit.ueId</Value>

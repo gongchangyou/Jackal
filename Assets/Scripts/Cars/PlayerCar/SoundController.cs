@@ -88,6 +88,14 @@ public class SoundController : MonoBehaviour
 
     private float prevPitchFactor = 0;
 
+	void Start(){
+		var audioSources = GetComponents<AudioSource> ();
+		foreach(var audio in audioSources){
+			if(!audio.isPlaying)
+				audio.Play();
+		}
+
+	}
     // Create the needed AudioSources
     void Awake ()
     {
