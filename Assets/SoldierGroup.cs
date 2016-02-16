@@ -31,7 +31,7 @@ public class SoldierGroup : MonoBehaviour {
 #endif
 		elapseTime += Time.deltaTime;
 
-		if (elapseTime > soldierTime) {
+		if (elapseTime > soldierTime && transform.childCount < 40) {
 			elapseTime = 0.0f;
 			createSoldier();
 		}

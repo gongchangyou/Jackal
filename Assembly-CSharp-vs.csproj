@@ -220,6 +220,9 @@
      <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyButtonTemplate.cs" />
      <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyJoystickTemplate.cs" />
      <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyTouchTemplate.cs" />
+     <Compile Include="Assets\Engineer.cs" />
+     <Compile Include="Assets\EngineerGroup.cs" />
+     <Compile Include="Assets\Person.cs" />
      <Compile Include="Assets\Scripts\Camera\CarCamera.cs" />
      <Compile Include="Assets\Scripts\Camera\SmoothFollow.cs" />
      <Compile Include="Assets\Scripts\Cars\AICar\AICarController.cs" />

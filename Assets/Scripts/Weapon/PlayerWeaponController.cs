@@ -74,16 +74,19 @@ public class PlayerWeaponController : MonoBehaviour
 //	void On_ButtonUp (string buttonName)
 //	{
 //		Debug.Log ("On_ButtonUp buttonName=" + buttonName);
-//		gun.StopShoot();
+//		if(buttonName == "missile")
+//			stopMissile();
 //	}	
 
 	void launchMissile(){
+//		Debug.LogError ("launchmissle");
 		for (int i=0; i < missile.Length; i++) {
 			missile[i].Shoot();
 		}
 	}
 
 	void stopMissile(){
+//		Debug.LogError ("stopMissile");
 		for (int i=0; i < missile.Length; i++) {
 			missile[i].StopShoot();
 		}

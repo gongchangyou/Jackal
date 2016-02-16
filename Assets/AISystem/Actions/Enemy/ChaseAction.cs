@@ -7,8 +7,8 @@ namespace AISystem.Actions{
 	public class ChaseAction : BaseAction {
 		public override void OnEnter ()
 		{
-			Soldier soldier = owner.GetComponent<Soldier> ();
-			soldier.Chase ();
+			Person person = owner.GetComponent<Person> ();
+			person.Chase ();
 			Finish ();
 		}
 		

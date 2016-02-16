@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-public class StateMove : StateBase<Soldier> {
+public class StateMove : StateBase<Person> {
 	float elapseTime = 0.0f;
 
 	protected Vector3[] pointList;
@@ -15,7 +15,7 @@ public class StateMove : StateBase<Soldier> {
 	private float curSpeed;
 	private Vector3 targetPoint;
 	private float radius = 2.0f;
-	public StateMove(Soldier soldier) : base( soldier ){
+	public StateMove(Person person) : base( person ){
 		currentPathIndex = 0;
 		velocity = owner.ComponentTransform.forward;
 //		curSpeed = speed * Time.deltaTime;//因为Time.deltaTime是个变量 帧数变低就变大了
@@ -24,13 +24,16 @@ public class StateMove : StateBase<Soldier> {
 
 
 		owner.run ();
+
 	}
 	
 	// Update is called once per frame
 	public override IState Update () {
+
 		targetPoint = pointList [currentPathIndex];
+
 //		Debug.Log ("currentPathIndex=" + currentPathIndex + " targetPoint=" + targetPoint);
-		if (Vector3.Distance (owner.ComponentTransform.position, targetPoint) < radius) {
+		if (Vector3.Distance (owner.ComponentTransform.localPosition, targetPoint) < radius) {
 //			Debug.Log ("distance=" + Vector3.Distance (owner.ComponentTransform.position, targetPoint) + "pathLength=" + pathLength);
 			if(currentPathIndex < pathLength - 1) currentPathIndex++;
 			else currentPathIndex = 0;
@@ -41,13 +44,14 @@ public class StateMove : StateBase<Soldier> {
 			return this;
 		}
 
-		var dir = targetPoint - owner.ComponentTransform.position;
+		var dir = targetPoint - owner.ComponentTransform.localPosition;
+		dir.y = 0;
 		dir.Normalize ();
 		var velocity = dir * curSpeed;
-		owner.ComponentTransform.position += velocity;
+		owner.ComponentTransform.localPosition += velocity;
 
-		targetPoint.y = owner.ComponentTransform.localPosition.y;
-		owner.ComponentTransform.LookAt(targetPoint);
+		if(dir.magnitude > 0.001f)
+			owner.ComponentTransform.localRotation = Quaternion.LookRotation(dir);
 
 		return this;
 	}
@@ -63,5 +67,11 @@ public class StateMove : StateBase<Soldier> {
 		Vector3 steeringForce = desiredVelocity - velocity;
 		Vector3 acceleration = steeringForce / mass;
 		return acceleration;
+	}
+
+	public override void OnDrawGizmos(){
+		if (targetPoint != Vector3.zero) 
+
+		Debug.DrawLine (targetPoint, owner.ComponentTransform.localPosition);
 	}
 }

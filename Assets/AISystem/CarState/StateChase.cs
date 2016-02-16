@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AStarSystem;
 public class StateChase : StateMove {
-	public StateChase(Soldier soldier) : base( soldier ){
+	public StateChase(Person person) : base( person ){
 
 	}
 
@@ -21,11 +21,12 @@ public class StateChase : StateMove {
 		
 		var pathArray = AStar.FindPath(startNode, goalNode);
 		if (pathArray != null && pathArray.Count > 0) {
-						pointList = new Vector3[pathArray.Count];
+						pointList = new Vector3[pathArray.Count + 1];
 						//		pointList.set
 						for (int i=0; i<pathArray.Count; i++) {
 								pointList [i] = ((Node)pathArray [i]).position;
 						}
+						pointList[pathArray.Count] = target.transform.localPosition;//add end point
 						pathLength = pointList.Length;
 						if (currentPathIndex >= pathLength) {
 //								Debug.LogError ("currentPathIndex =" + currentPathIndex + " pathLength = " + pathLength);

@@ -9,8 +9,8 @@ namespace AISystem.Actions{
 		public Vector3[] pointList;
 		public override void OnEnter ()
 		{
-			Soldier soldier = owner.GetComponent<Soldier> ();
-			soldier.Patrol (pointList);
+			Person person = owner.GetComponent<Person> ();
+			person.Patrol (pointList);
 			Finish ();
 		}
 		
