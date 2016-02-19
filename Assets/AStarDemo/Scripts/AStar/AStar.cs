@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using AStarSystem;
 public class AStar
 {
     #region List fields

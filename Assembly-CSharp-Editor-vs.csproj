@@ -46,6 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AISystem\Editor\AIControllerEditor.cs" />
+     <Compile Include="Assets\AISystem\Editor\AIEditorWindow.cs" />
+     <Compile Include="Assets\AISystem\Editor\AIRuntimeControllerEditor.cs" />
+     <Compile Include="Assets\AISystem\Editor\CreateAIController.cs" />
+     <Compile Include="Assets\AISystem\Editor\GraphEditorWindow.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\AnimatorParameterDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\ArrayElementDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\AttributePopupDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\HideAttributeDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\MinMaxDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\StoreParameterDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\TagDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\PropertyDrawer\UseGlobalPrameterDrawer.cs" />
+     <Compile Include="Assets\AISystem\Editor\ReorderableList.cs" />
+     <Compile Include="Assets\AISystem\Editor\StateInspector.cs" />
      <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyButtonCallBack.cs" />
      <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyButtonInspector.cs" />
      <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyJoystickCallBack.cs" />
@@ -72,6 +87,9 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.8/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityTools">
+ <HintPath>D:/3400OT_Code bundle/3400_10_Codes/AIBookLastChapter/Assets/AISystem/Plugins/UnityTools.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

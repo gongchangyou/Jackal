@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using AStarSystem;
 //Grid manager class handles all the grid properties
 public class GridManager : MonoBehaviour
 {

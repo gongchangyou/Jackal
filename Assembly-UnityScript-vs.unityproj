@@ -59,6 +59,9 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.8/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityTools">
+ <HintPath>D:/3400OT_Code bundle/3400_10_Codes/AIBookLastChapter/Assets/AISystem/Plugins/UnityTools.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

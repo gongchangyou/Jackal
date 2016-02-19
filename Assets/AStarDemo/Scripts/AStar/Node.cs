@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 
+namespace AStarSystem{
 public class Node : IComparable
 {
     #region Fields
@@ -60,5 +61,5 @@ public class Node : IComparable
         return 0;
     }
 }
-
+}
 

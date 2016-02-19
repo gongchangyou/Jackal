@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using AStarSystem;
 /// <summary>
 /// This class is adapted and modified from the FSM implementation class available on UnifyCommunity website
 /// The license for the code is Creative Commons Attribution Share Alike.

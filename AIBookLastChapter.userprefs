@@ -1,24 +1,38 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SoldierGroup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Soldier.cs">
     <Files>
-      <File FileName="Assets\Scripts\Cars\AICar\FSMs\ChaseState.cs" Line="18" Column="43" />
-      <File FileName="Assets\Scripts\Cars\PlayerCar\Car.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Cars\PlayerCar\PlayerCarController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapon\PlayerWeaponController.cs" Line="1" Column="1" />
-      <File FileName="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example-thirdPerson_DirectEventMode\JoystickEvent.cs" Line="1" Column="1" />
-      <File FileName="Assets\EasyTouch\Plugins\MovingJoystick.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapon\WeaponGun.cs" Line="1" Column="1" />
-      <File FileName="Assets\EasyTouch\Plugins\EasyJoystick.cs" Line="1" Column="1" />
-      <File FileName="Assets\SoldierGroup.cs" Line="22" Column="20" />
+      <File FileName="Assets\AISystem\Editor\StateInspector.cs" Line="307" Column="98" />
+      <File FileName="Assets\AISystem\AIController.cs" Line="22" Column="3" />
+      <File FileName="Assets\Soldier.cs" Line="97" Column="17" />
+      <File FileName="Assets\Scripts\Cars\AICar\FSMs\PatrolState.cs" Line="4" Column="20" />
+      <File FileName="Assets\AISystem\Actions\Enemy\PatrolAction.cs" Line="8" Column="19" />
+      <File FileName="Assets\AISystem\CarState\CarStatePatrol.cs" Line="1" Column="1" />
+      <File FileName="Assets\AISystem\CarState\StateBase.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="AISystem" expanded="True">
+              <Node name="Actions" expanded="True">
+                <Node name="Enemy" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Scripts" expanded="True">
+              <Node name="Cars" expanded="True">
+                <Node name="AICar" expanded="True">
+                  <Node name="FSMs" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Soldier.cs" selected="True" />
+          </Node>
+        </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>DVolume</Value>
+          <Value>soldier</Value>
           <Value>fVolume</Value>
           <Value>eVolume</Value>
           <Value>engineForceValues[0]</Value>
@@ -35,6 +49,8 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="D:\3400OT_Code bundle\3400_10_Codes\AIBookLastChapter\Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\ObjectTouch.cs" line="147" />
+      <Breakpoint file="D:\3400OT_Code bundle\3400_10_Codes\AIBookLastChapter\Assets\SubSoldier.cs" line="6" />
+      <Breakpoint file="D:\3400OT_Code bundle\3400_10_Codes\AIBookLastChapter\Assets\Soldier.cs" line="113" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

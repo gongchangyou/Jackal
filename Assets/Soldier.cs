@@ -2,6 +2,12 @@
 using System.Collections;
 
 public class Soldier : MonoBehaviour {
+	private IStateContext stateContext;
+	public IStateContext StateContext{
+		get{return stateContext;}
+		set{stateContext = value;}
+	}
+
 	public GameObject bullet;
 	
 	private Transform model;
@@ -16,7 +22,8 @@ public class Soldier : MonoBehaviour {
 	private float radius = 40.0f;
 
 	private float shootElapseTime = 0.0f;
-	private Transform transformComponent;
+	public Transform ComponentTransform;
+	
 	// Use this for initialization
 	void Start () {
 		model = transform.FindChild("Model").transform;	
@@ -25,27 +32,47 @@ public class Soldier : MonoBehaviour {
 		GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
 		playerTransform = objPlayer.transform;
 
-		transformComponent = transform;
+		ComponentTransform = transform;
 //		model.animation.CrossFade("Run");
 //		model.animation.CrossFade("idle");
+
+		//add airuntimecontroller
+
+		AIRuntimeController runtimeController = gameObject.AddComponent<AIRuntimeController> ();
+		AISystem.AIController aic = null;
+		aic = (AISystem.AIController)Resources.Load ("AISystem/SoldierAI");
+		runtimeController.originalController = aic;
+		runtimeController.SetAIController ();
+
+		StateContext = new StateContext<Soldier> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (bDead)
 			return;
-		if (Vector3.Distance (playerTransform.localPosition, transform.localPosition) < 50.0f) {
-						transformComponent.LookAt (playerTransform.localPosition);
-//			transform.localRotation = Quaternion.LookRotation(playerTransform.localPosition - transform.localPosition);
-//			transform.rotation = Quaternion.LookRotation(playerTransform.localPosition - transform.localPosition);
-			shootElapseTime += Time.deltaTime;
-			if(shootElapseTime > 2.0f){
-				Fire ();
-				shootElapseTime = 0.0f;
-			}
-		} else {
-			model.animation.CrossFade("idle");
-		}
+
+		if (StateContext == null)
+			return;
+		if (StateContext.CurrentState == null)
+			return;
+		StateContext.Update ();
+		if (StateContext.CurrentState == null)
+			return;
+//		if (Vector3.Distance (playerTransform.localPosition, transformComponent.localPosition) < 50.0f) {
+//			Vector3 target = playerTransform.localPosition;
+//			target.y = transformComponent.position.y;
+//			transformComponent.LookAt (target);
+////			transform.localRotation = Quaternion.LookRotation(playerTransform.localPosition - transform.localPosition);
+////			transform.rotation = Quaternion.LookRotation(playerTransform.localPosition - transform.localPosition);
+//			shootElapseTime += Time.deltaTime;
+//			if(shootElapseTime > 2.0f){
+//				Fire ();
+//				shootElapseTime = 0.0f;
+//			}
+//		} else {
+//			model.animation.CrossFade("idle");
+//		}
 	}
 
 	void Fire(){
@@ -58,7 +85,7 @@ public class Soldier : MonoBehaviour {
 	{
 		if (bDead)
 			return;
-		Debug.Log ("collision.gameObject.tag  = " + collision.gameObject.tag );
+//		Debug.Log ("collision.gameObject.tag  = " + collision.gameObject.tag );
 		if (collision.gameObject.tag == "Bullet")
 		{
 			print("AICar Hit with Bullet");
@@ -80,5 +107,15 @@ public class Soldier : MonoBehaviour {
 			rigidbody.AddExplosionForce(power, transform.position - 3.0f * transform.right, radius, 40.0F);
 			Destroy(gameObject, 2.0f);
 		}
+	}
+
+	public virtual CarStatePatrol Patrol(Vector3[] pointList){
+		CarStatePatrol state = new CarStatePatrol (this, pointList);
+		StateContext.SetState (state);
+		return state;
+	}
+
+	public void run(){
+		model.animation.CrossFade("Run");
 	}
 }

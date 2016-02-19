@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using AStarSystem;
 public class PriorityQueue 
 {
     // node array to store the priority queue
