@@ -19,7 +19,7 @@ public class StateMove : StateBase<Soldier> {
 		currentPathIndex = 0;
 		velocity = owner.ComponentTransform.forward;
 //		curSpeed = speed * Time.deltaTime;//因为Time.deltaTime是个变量 帧数变低就变大了
-		curSpeed = 0.2f;
+		curSpeed = 0.1f;
 
 
 
@@ -41,9 +41,13 @@ public class StateMove : StateBase<Soldier> {
 			return this;
 		}
 
-		velocity += Steer (targetPoint);
+		var dir = targetPoint - owner.ComponentTransform.position;
+		dir.Normalize ();
+		var velocity = dir * curSpeed;
 		owner.ComponentTransform.position += velocity;
-		owner.ComponentTransform.rotation = Quaternion.LookRotation (velocity);
+
+		targetPoint.y = owner.ComponentTransform.localPosition.y;
+		owner.ComponentTransform.LookAt(targetPoint);
 
 		return this;
 	}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#define DEBUG
+using UnityEngine;
 using System.Collections;
 
 public class SoldierGroup : MonoBehaviour {
@@ -9,13 +10,16 @@ public class SoldierGroup : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		soldierObject = Resources.Load ("prefabs/Soldier/Soldier");
-
+#if DEBUG
 		createSoldier();
+#endif
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		#if DEBUG
 		return;
+#endif
 		elapseTime += Time.deltaTime;
 
 		if (elapseTime > soldierTime) {
