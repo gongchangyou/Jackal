@@ -23,6 +23,8 @@ public class Soldier : MonoBehaviour {
 
 	private float shootElapseTime = 0.0f;
 	public Transform ComponentTransform;
+
+ 	public GameObject TargetObj;
 	
 	// Use this for initialization
 	void Start () {
@@ -45,6 +47,11 @@ public class Soldier : MonoBehaviour {
 		runtimeController.SetAIController ();
 
 		StateContext = new StateContext<Soldier> ();
+
+		//add Target
+		var targetObj = (AISystem.GameObjectParameter) runtimeController.controller.GetParameter("Target");
+		targetObj.Value = objPlayer;
+		TargetObj = objPlayer;
 	}
 	
 	// Update is called once per frame
@@ -109,8 +116,14 @@ public class Soldier : MonoBehaviour {
 		}
 	}
 
-	public virtual CarStatePatrol Patrol(Vector3[] pointList){
-		CarStatePatrol state = new CarStatePatrol (this, pointList);
+	public virtual StatePatrol Patrol(Vector3[] pointList){
+		StatePatrol state = new StatePatrol (this, pointList);
+		StateContext.SetState (state);
+		return state;
+	}
+
+	public virtual StateChase Chase(){
+		StateChase state = new StateChase (this);
 		StateContext.SetState (state);
 		return state;
 	}

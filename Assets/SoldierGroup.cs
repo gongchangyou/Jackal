@@ -10,11 +10,12 @@ public class SoldierGroup : MonoBehaviour {
 	void Start () {
 		soldierObject = Resources.Load ("prefabs/Soldier/Soldier");
 
-
+		createSoldier();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		return;
 		elapseTime += Time.deltaTime;
 
 		if (elapseTime > soldierTime) {
@@ -25,7 +26,7 @@ public class SoldierGroup : MonoBehaviour {
 
 	private void createSoldier(){
 
-		int count = Random.Range(1, 5);
+		int count = Random.Range(1, 1);
 		for (int i=0; i<count; i++) {
 						Vector3 pos = Vector3.zero;
 						pos.x = Random.Range (8, 230);

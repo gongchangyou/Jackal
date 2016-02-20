@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-public class CarStatePatrol : StateBase<Soldier> {
+public class StateMove : StateBase<Soldier> {
 	float elapseTime = 0.0f;
 
-	public Vector3[] pointList;
-	int currentPathIndex;
-	int pathLength;
+	protected Vector3[] pointList;
+	protected int currentPathIndex;
+	protected int pathLength;
 	Vector3 velocity;
 
 	private float speed = 10.0f;
@@ -15,15 +15,13 @@ public class CarStatePatrol : StateBase<Soldier> {
 	private float curSpeed;
 	private Vector3 targetPoint;
 	private float radius = 2.0f;
-	public CarStatePatrol(Soldier soldier, Vector3[] list) : base( soldier ){
+	public StateMove(Soldier soldier) : base( soldier ){
 		currentPathIndex = 0;
-//		pointList = list;
-		List<Vector3> tmp = new List<Vector3> (list);
-		pointList = tmp.Select (point => point + owner.ComponentTransform.position).ToArray ();
-		pathLength = pointList.Length;
 		velocity = owner.ComponentTransform.forward;
 //		curSpeed = speed * Time.deltaTime;//因为Time.deltaTime是个变量 帧数变低就变大了
 		curSpeed = 0.2f;
+
+
 
 		owner.run ();
 	}
@@ -31,7 +29,7 @@ public class CarStatePatrol : StateBase<Soldier> {
 	// Update is called once per frame
 	public override IState Update () {
 		targetPoint = pointList [currentPathIndex];
-//		Debug.Log ("targetPoint=" + targetPoint);
+		Debug.Log ("currentPathIndex=" + currentPathIndex + " targetPoint=" + targetPoint);
 		if (Vector3.Distance (owner.ComponentTransform.position, targetPoint) < radius) {
 //			Debug.Log ("distance=" + Vector3.Distance (owner.ComponentTransform.position, targetPoint) + "pathLength=" + pathLength);
 			if(currentPathIndex < pathLength - 1) currentPathIndex++;

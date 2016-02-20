@@ -59,6 +59,7 @@
      <Compile Include="Assets\AISystem\Actions\Animator\SetTrigger.cs" />
      <Compile Include="Assets\AISystem\Actions\Audio\Play.cs" />
      <Compile Include="Assets\AISystem\Actions\BaseAction.cs" />
+     <Compile Include="Assets\AISystem\Actions\Enemy\ChaseAction.cs" />
      <Compile Include="Assets\AISystem\Actions\Enemy\PatrolAction.cs" />
      <Compile Include="Assets\AISystem\Actions\GameObject\Destroy.cs" />
      <Compile Include="Assets\AISystem\Actions\GameObject\DestroyComponent.cs" />
@@ -88,11 +89,13 @@
      <Compile Include="Assets\AISystem\BaseAttribute.cs" />
      <Compile Include="Assets\AISystem\BaseTransition.cs" />
      <Compile Include="Assets\AISystem\CanCreateAttribute.cs" />
-     <Compile Include="Assets\AISystem\CarState\CarStatePatrol.cs" />
      <Compile Include="Assets\AISystem\CarState\IState.cs" />
      <Compile Include="Assets\AISystem\CarState\IStateContext.cs" />
      <Compile Include="Assets\AISystem\CarState\StateBase.cs" />
+     <Compile Include="Assets\AISystem\CarState\StateChase.cs" />
      <Compile Include="Assets\AISystem\CarState\StateContext.cs" />
+     <Compile Include="Assets\AISystem\CarState\StateMove.cs" />
+     <Compile Include="Assets\AISystem\CarState\StatePatrol.cs" />
      <Compile Include="Assets\AISystem\CategoryAttribute.cs" />
      <Compile Include="Assets\AISystem\Conditions\Animator\GetBool.cs" />
      <Compile Include="Assets\AISystem\Conditions\Animator\GetFloat.cs" />
