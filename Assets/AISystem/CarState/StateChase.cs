@@ -20,24 +20,27 @@ public class StateChase : StateMove {
 		var goalNode = new Node(GridManager.instance.GetGridCellCenter(GridManager.instance.GetGridIndex(target.transform.localPosition)));
 		
 		var pathArray = AStar.FindPath(startNode, goalNode);
-		pointList = new Vector3[pathArray.Count];
-		//		pointList.set
-		for (int i=0; i<pathArray.Count; i++) {
-			pointList[i] = ((Node) pathArray[i]).position;
-		}
-		pathLength = pointList.Length;
-		if (currentPathIndex >= pathLength) {
-			Debug.LogError("currentPathIndex =" + currentPathIndex + " pathLength = " + pathLength);
-						currentPathIndex = pathLength - 1;
+		if (pathArray != null && pathArray.Count > 0) {
+						pointList = new Vector3[pathArray.Count];
+						//		pointList.set
+						for (int i=0; i<pathArray.Count; i++) {
+								pointList [i] = ((Node)pathArray [i]).position;
+						}
+						pathLength = pointList.Length;
+						if (currentPathIndex >= pathLength) {
+//								Debug.LogError ("currentPathIndex =" + currentPathIndex + " pathLength = " + pathLength);
+								currentPathIndex = pathLength - 1;
 
+						}
+						if (Vector3.Distance (owner.ComponentTransform.position, pointList [0]) < 2.0f) {
+//								Debug.LogError ("currentPathIndex =" + currentPathIndex + "near");
+								currentPathIndex = 1;
+						}
+						if (currentPathIndex < pathLength)
+								base.Update ();
 				}
-		if (Vector3.Distance (owner.ComponentTransform.position, pointList [0]) < 2.0f) {
-			Debug.LogError("currentPathIndex =" + currentPathIndex + "near");
-						currentPathIndex = 1;
-				}
-		if(currentPathIndex < pathLength)
-			base.Update ();
 		return this;
 	}
+
 
 }

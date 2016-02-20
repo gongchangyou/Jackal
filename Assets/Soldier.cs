@@ -10,10 +10,10 @@ public class Soldier : MonoBehaviour {
 
 	public GameObject bullet;
 	
-	private Transform model;
+	public Transform model;
 	private Transform gun;
 
-	private Transform playerTransform;
+	public Transform playerTransform;
 
 	public float health = 100.0f;
 	private bool bDead = false;
@@ -25,7 +25,8 @@ public class Soldier : MonoBehaviour {
 	public Transform ComponentTransform;
 
  	public GameObject TargetObj;
-	
+
+	public SoldierGroup sg;
 	// Use this for initialization
 	void Start () {
 		model = transform.FindChild("Model").transform;	
@@ -82,7 +83,7 @@ public class Soldier : MonoBehaviour {
 //		}
 	}
 
-	void Fire(){
+	public void Fire(){
 		//if (buttonName=="Fire"){
 		Instantiate( bullet, gun.transform.position, gun.rotation);
 		//}		
@@ -113,6 +114,10 @@ public class Soldier : MonoBehaviour {
 			rigidbody.velocity = transform.TransformDirection(new Vector3(5.0f, 15.0f, 0.0f));
 			rigidbody.AddExplosionForce(power, transform.position - 3.0f * transform.right, radius, 40.0F);
 			Destroy(gameObject, 2.0f);
+
+			sg.killEnemyCount += 1;
+			sg.enemyCount -= 1;
+
 		}
 	}
 
@@ -124,6 +129,12 @@ public class Soldier : MonoBehaviour {
 
 	public virtual StateChase Chase(){
 		StateChase state = new StateChase (this);
+		StateContext.SetState (state);
+		return state;
+	}
+
+	public virtual StateAttack Attack(){
+		StateAttack state = new StateAttack (this);
 		StateContext.SetState (state);
 		return state;
 	}

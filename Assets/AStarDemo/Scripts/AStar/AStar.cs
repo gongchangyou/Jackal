@@ -100,8 +100,8 @@ public class AStar
         //If finished looping and cannot find the goal then return null
         if (node.position != goal.position)
         {
-            Debug.LogError("Goal Not Found");
-            return null;
+			Debug.LogError("Goal Not Found node.position=" + node.position + " goal.position=" + goal.position);
+			return null;
         }
 
         //Calculate the path based on the final node

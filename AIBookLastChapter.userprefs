@@ -2,17 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AISystem\CarState\StateChase.cs">
     <Files>
-      <File FileName="Assets\SoldierGroup.cs" Line="35" Column="46" />
-      <File FileName="Assets\Soldier.cs" Line="1" Column="1" />
-      <File FileName="Assets\AISystem\Actions\Enemy\PatrolAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\AISystem\CarState\StateChase.cs" Line="19" Column="87" />
-      <File FileName="Assets\AISystem\Actions\Enemy\ChaseAction.cs" Line="11" Column="11" />
+      <File FileName="Assets\SoldierGroup.cs" Line="16" Column="32" />
+      <File FileName="Assets\Soldier.cs" Line="130" Column="23" />
+      <File FileName="Assets\AISystem\Actions\Enemy\PatrolAction.cs" Line="13" Column="15" />
+      <File FileName="Assets\AISystem\CarState\StateChase.cs" Line="12" Column="36" />
+      <File FileName="Assets\AISystem\Actions\Enemy\ChaseAction.cs" Line="8" Column="3" />
       <File FileName="Assets\AStarDemo\Scripts\AStar\GridManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\AStarDemo\Scripts\AStar\AStar.cs" Line="1" Column="1" />
-      <File FileName="Assets\AISystem\CarState\StateBase.cs" Line="1" Column="1" />
-      <File FileName="Assets\AISystem\CarState\StatePatrol.cs" Line="5" Column="37" />
-      <File FileName="Assets\AISystem\CarState\StateContext.cs" Line="1" Column="1" />
-      <File FileName="Assets\AISystem\CarState\StateMove.cs" Line="45" Column="1" />
+      <File FileName="Assets\AStarDemo\Scripts\AStar\AStar.cs" Line="98" Column="10" />
+      <File FileName="Assets\AISystem\Actions\Enemy\AttackAction.cs" Line="11" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,8 +23,17 @@
                 <Node name="StateChase.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="EasyTouch" expanded="True">
-              <Node name="Plugins" expanded="True" />
+            <Node name="AStarDemo" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="AStar" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Scripts" expanded="True">
+              <Node name="Cars" expanded="True">
+                <Node name="AICar" expanded="True">
+                  <Node name="FSMs" expanded="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

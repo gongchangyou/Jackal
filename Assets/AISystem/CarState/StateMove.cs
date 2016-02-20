@@ -29,7 +29,7 @@ public class StateMove : StateBase<Soldier> {
 	// Update is called once per frame
 	public override IState Update () {
 		targetPoint = pointList [currentPathIndex];
-		Debug.Log ("currentPathIndex=" + currentPathIndex + " targetPoint=" + targetPoint);
+//		Debug.Log ("currentPathIndex=" + currentPathIndex + " targetPoint=" + targetPoint);
 		if (Vector3.Distance (owner.ComponentTransform.position, targetPoint) < radius) {
 //			Debug.Log ("distance=" + Vector3.Distance (owner.ComponentTransform.position, targetPoint) + "pathLength=" + pathLength);
 			if(currentPathIndex < pathLength - 1) currentPathIndex++;
